@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Satellite } from './satellite';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,7 +20,7 @@ export class AppComponent {
  
          let fetchedSatellites = data.satellites;
          for (let i = 0; i < fetchedSatellites.length; i++){
-           new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+           new Satellite();
            this.sourceList.push(fetchedSatellites);
          }
          
@@ -33,9 +32,9 @@ export class AppComponent {
    
    search(searchTerm: string): void {
      let matchingSatellites: Satellite[] = [];
-     searchTerm = searchTerm.toLowerCase();
+     searchTerm = searchTerm.toLocaleLowerCase();
      for(let i=0; i < this.sourceList.length; i++) {
-        let name = this.sourceList[i].name.toLowerCase();
+        let name = this.sourceList[i].name.toLocaleLowerCase();
         if (name.indexOf(searchTerm) >= 0) {
            matchingSatellites.push(this.sourceList[i]);
         }

@@ -1,4 +1,5 @@
 
+
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -11,6 +12,9 @@
   </style>
 
   <app-orbit-list [satellites]="displayList"></app-orbit-list>
-<div class="search-form" input (keyup.enter)="search(searchTerm.value).searchTerm button (click)="search(searchTerm.value)">
+<div class="search-form">
+  <input (keyup.enter)="search(searchTerm.value)"/>
+  <button (click)="search(searchTerm.value);">search</button>
+</div> 
 
-</div>
+
